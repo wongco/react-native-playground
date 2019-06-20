@@ -28,6 +28,11 @@ export const FadeImage = () => {
     outputRange: ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.7)"]
   });
 
+  const translateY = fadeOut.interpolate({
+    inputRange: [0, 1],
+    outputRange: [-300, 0]
+  });
+
   return (
     <Animated.View
       style={[
@@ -45,10 +50,7 @@ export const FadeImage = () => {
             opacity: fadeOut,
             transform: [
               {
-                translateY: fadeOut.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [-300, 0]
-                })
+                translateY
               }
             ]
           }}
