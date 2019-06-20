@@ -16,6 +16,14 @@ const styles = StyleSheet.create({
 export const FadeImage = () => {
   const [fadeOut] = useState(new Animated.Value(1));
 
+  // Test case for using side effects to update Animations onLoad
+  // useEffect(() => {
+  //   Animated.timing(fadeOut, {
+  //     toValue: 0,
+  //     duration: 1000
+  //   }).start();
+  // });
+
   const handleEnd = () => {
     Animated.timing(fadeOut, {
       toValue: 0,
